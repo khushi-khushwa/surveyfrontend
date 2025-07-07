@@ -14,7 +14,7 @@ export class FormservicesService {
       
 
   postdata(endpoint:string, data: any) {
-    return this.http.post(`${this.baseUrl}/${endpoint}`,+data);
+    return this.http.post(`${this.baseUrl}/${endpoint}`,data);
   }
  getdata(endpoint: string) {
   console.log(`${this.baseUrl}/${endpoint}`)
@@ -24,7 +24,7 @@ export class FormservicesService {
 
   updataformdata(endpoint: string, data: any, id: any) {
     console.log(data, id);
-    return this.http.put(`${this.baseUrl}/${endpoint}/${id}`, data);
+    return this.http.put(`${this.baseUrl}/${endpoint}/${id}`,data);
   }
 
 

@@ -11,14 +11,19 @@ export class SurveyPreviewComponent implements OnInit{
   @Input() outputQuestion
 
   pre: any;
-  constructor( private deleteservice:FormservicesService){}
+  constructor( private deleteservice :FormservicesService){}
    
   ngOnInit(): void {
     console.log(this.outputQuestion)
 
   }
+
   deletequestion(e, type){
-console.log(e)
+    console.log(e)
+this.deleteservice.deletedata('survey', e).subscribe(res => {
+  console.log('Deleted:', res);
+  this.deleteservice.delSub.next(true); 
+});
   }
 
   }

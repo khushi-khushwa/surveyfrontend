@@ -19,6 +19,7 @@ export class PreviewSingleComponent implements OnInit{
     //  this.previewQuestion.map((item)=>{
     //  this.option= item.option
     //  })
+    
   }
 
 

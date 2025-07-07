@@ -6,21 +6,21 @@
 
         </div>
         <div *ngIf="data.questionType === 'multiple'">
-            <app-preview-single  [previewQuestion]="[data]" [header]="i+1"></app-preview-single>
+            <app-preview-single  [previewQuestion]="[data]" [header]="i+1" (questiondata)="deletequestion($event, true)"></app-preview-single>
         </div>
         <div *ngIf="data.questionType === 'freetext'">
-            <app-preview-freetext [previewQuestion]="[data]" [header]="i+1"></app-preview-freetext>
+            <app-preview-freetext [previewQuestion]="[data]" [header]="i+1"(questiondata)="deletequestion($event, true)"></app-preview-freetext>
         </div>
 
         <div *ngIf="data.questionType === 'image'">
-            <app-preview-image [previewQuestion]="[data]"   [header]="i+1"></app-preview-image>
+            <app-preview-image [previewQuestion]="[data]"   [header]="i+1" (questiondata)="deletequestion($event, true)"></app-preview-image>
         </div>
 
         <div *ngIf="data.questionType === 'grid'">
-            <app-preview-grid [previewQuestion]="[data]"  [header]="i+1"></app-preview-grid>
+            <app-preview-grid [previewQuestion]="[data]"  [header]="i+1" (questiondata)="deletequestion($event, true)"></app-preview-grid>
         </div>
         <div *ngIf="data.questionType === 'numeric'">
-            <app-preview-numeric [previewQuestion]="[data]"  [header]="i+1"></app-preview-numeric>
+            <app-preview-numeric [previewQuestion]="[data]"  [header]="i+1" (questiondata)="deletequestion($event, true)"></app-preview-numeric>
         </div>
       </div>
     </div>
