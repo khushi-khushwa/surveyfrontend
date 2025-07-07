@@ -1,0 +1,57 @@
+
+<div  class="container-fluid">
+  <div class="upperhead">
+
+    <h5 style="color: rgb(84, 24, 132) !important;">Add {{ type }} type question</h5>
+    <!-- <div class="previewbutton"> -->
+      <button  class="previewbutton" (click)="openpreview()">Preview</button>
+<!-- </div> -->
+  </div>
+  <form [formGroup]="imageForm">
+      <div>
+          <div class="questionalign">
+            <app-write-question [question]="imageForm.get('question')" style="width: 100%"></app-write-question>
+              <!-- <mat-form-field style="width: 77%">
+                <input matInput type="text" placeholder="enter question" formControlName="question"/>
+              </mat-form-field> -->
+              <mat-form-field style="width: 21%">
+                <input matInput type="text" placeholder="question SPSS" formControlName="SPSS"/>
+              </mat-form-field>
+            </div>
+      </div>
+
+      
+      <h6>option</h6>
+      <div class="uploadfile">
+      
+        <div *ngIf="upload">
+                  <ng-container  *ngFor="let file of previewUrls">
+                         <img  [src]=" file" style="width:9rem; height: 9rem;"/>
+                  </ng-container>
+           </div>
+            <div *ngIf="!upload" style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;gap:1rem;
+            align-items: center;">
+              <img  src="assets/upload-to-cloud.svg" style=" width:3.5rem" />
+             <p >file upload here</p>
+            </div>
+
+          <label class="custom-file-upload">
+              <input type="file" [ngStyle]="{'visiblity':'hidden'}" formControlName="questionImage" (change)="imageSelect($event)"/> 
+              Browser File
+          </label>
+      </div>
+      
+  <div class="formbutton">
+
+    <button class="cancelbutton" (click)="navigateto()">
+      cancel
+    </button>
+
+    <button class="savebutton" (click)="submit()">save</button>
+  </div>
+  </form>
+ 
+</div>

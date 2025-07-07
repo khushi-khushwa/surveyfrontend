@@ -1,0 +1,69 @@
+
+
+    input{
+        border:none;
+        border-bottom: 1px solid grey;
+        width:90%;
+    }
+    .singleinput{
+      margin-top:2rem ;
+    }
+
+ 
+
+
+    .survey-stats-box {
+        background: white;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        height: 165px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        cursor: pointer;
+    }
+    
+    .survey-stats-box:hover {
+        background: rgba(29, 170, 202, 0.25) !important;
+    }
+.surveys{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+.datasurvey{
+    height: 7rem;
+    width:7rem
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.createcmp {
+    background: #3657C2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-block: 0.7rem;
+    padding-inline: 2rem;
+    border: none;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0.5rem;
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+    gap: 0.5rem;
+    mat-icon{
+        color: white !important;
+    }
+}

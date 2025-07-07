@@ -1,0 +1,102 @@
+<div>
+    <div>
+        <span>Example Question</span>
+
+        <div *ngIf="data.type == 'single'">
+            <div  [ngStyle] ="{'background-color' :'#eee','padding': '10px'}" >
+                <span title >Q. What is your favorite season?</span>
+              </div>
+              <div [ngStyle]="{'padding': '10px'}">
+                <mat-radio-button value="summer" >Summer</mat-radio-button>
+                <mat-radio-button value="winter">Winter</mat-radio-button>
+                <mat-radio-button value="autumn">Autumn</mat-radio-button>
+                <mat-radio-button value="spring">Spring</mat-radio-button>
+              </div>
+
+           
+        </div>
+  
+
+        <div *ngIf="data.type == 'multiple'">
+             
+            <div fxLayout="row" [ngStyle]="{'background-color' :'#eee','padding': '10px'}">
+                <span title fxFlex="100">Q. Which words would you use to describe the video? Select all that apply</span>
+              </div>
+              <div  [ngStyle]="{'padding': '10px'}"
+                   class="survey-inputs">
+                <mat-checkbox>Sad</mat-checkbox>
+                <mat-checkbox checked="true">Entertaining</mat-checkbox>
+                <mat-checkbox checked="true">Funny</mat-checkbox>
+                <mat-checkbox>Scary</mat-checkbox>
+                <mat-checkbox>Boring</mat-checkbox>
+              </div>
+        </div>
+
+        <div *ngIf="data.type == 'freetext'">
+             
+            <div [ngStyle] ="{'background-color' :'#eee','padding': '10px'}">
+              <span title >Q. What thoughts did you have about the video?</span>
+            </div>
+            <div  [ngStyle] ="{'padding': '10px'}">
+              <mat-form-field class="full-width" >
+                <textarea matInput [placeholder]="'Your Answer'" rows="4" disabled="true"></textarea>
+              </mat-form-field>
+            </div>
+        </div>
+        <div *ngIf="data.type === 'numeric'">
+             
+            <div  [ngStyle]="{'background-color' :'#eee','padding': '10px'}">
+                <span title >Q. How many cups of coffee do you drink per day?</span>
+              </div>
+              <div class="addbutton">
+              
+
+                <!-- <button (click)="items.length <=5 ? warn('Can\'t remove more than 5'): items.pop()">
+                  
+                    <mat-icon class="icon-clz">remove_circle</mat-icon>
+                  </button>
+
+                  <div  *ngFor="let item of items; let i=index"  class="number">{{item}}</div>
+                <button (click)="items.length >= 10 ? warn('Can\'t add more than ten'): items.push(items.length + 1)">
+                
+                    <mat-icon class="icon-clz">add_circle</mat-icon>
+                  </button> -->
+         
+        </div>
+        </div>
+
+        <div *ngIf="data.type === 'image'">
+            <span titleBlue18>Example question</span>
+            <div  [ngStyle]="{'background-color' :'#eee','padding': '10px'}">
+              <span title >Q. Which image fits the video the best?</span>
+            </div>
+            <div  [ngStyle]="{'padding': '10px'}" class="imagesection">
+              <img src="assets/firstimage1.png">
+              <img src="assets/secendimage2.png">
+              <img src="assets/threeimage3.png">
+              <img src="assets/foruimage4.png">
+            </div>
+        </div>
+
+         <div *ngIf="data.type === 'grid'">
+            <div  [ngStyle] ="{'background-color' :'#eee','padding': '10px'}">
+                <span title fxFlex="100">Q. Select the amount of times per week you watch the following channels?</span>
+              </div>
+              <div >
+                <div >
+                  <div></div>
+                  <div  [ngClass]="['title']" title *ngFor="let option of data.demoGridArray.options">
+                    {{option['option']}}
+                  </div>
+                </div>
+                <div  *ngFor="let option of data.demoGridArray.values"  [ngClass]="['title']">
+                  <div title>
+                    {{option['option']}}
+                  </div>
+                  <div  [ngClass]="['title']"  *ngFor="let option of data.demoGridArray.options">
+                    <mat-radio-button disabled></mat-radio-button>
+                  </div>
+         </div>
+
+    </div>
+</div>

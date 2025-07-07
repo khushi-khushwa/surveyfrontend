@@ -1,0 +1,44 @@
+<div class="container-fluid createquestion">
+    <div class="row">
+        <div class="col-lg-8">
+<div class="">
+
+    <div class="text-question">
+        <h6 class="pb-0 mb-0" style="font-size: 1.3rem;">Add Question</h6>
+        <p class="pb-0 mb-0">Choose A question type from the list below.</p>
+     </div>
+
+     <div class="choicequestion">
+         <ng-container *ngFor="let question of QuestionTypes; let i=index" >
+             <div class="question" (click)="selectTab(i)">
+                 <mat-icon>{{question.icon}}</mat-icon> 
+                 <span>{{question.name}}</span>
+             </div>
+            </ng-container>
+     </div>
+</div>
+        </div>
+        <div class="col-lg-4">
+            <div class="uploadfile">
+                <div >
+                 <img  src="assets/upload-to-cloud.svg" style=" width:3.5rem" />
+                </div>
+                <p >Drag and drop a spreadsheet of survey questions</p>
+                <label class="custom-file-upload">
+                    <input type="file" [ngStyle]="{'visiblity':'hidden'}" (change)="onFileChange($event)"  #file/>
+                    Browser File
+                </label>
+                <a  href="https://monet-assets.s3-us-west-2.amazonaws.com/icons/corporate/downloads/Survey+Questions+Template.xlsx" class="d-flex gap-2" (click)="file.click()">
+                    Download Survey spreadsheet template
+                    <mat-icon>cloud_download</mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div>
+
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="grandfather">
+
+    <div class="parent">
+        <div class="detail" *ngIf="listdata">
+            <p><span></span>Study name: &nbsp; &nbsp;{{listdata.target[0].study_name}}</p>
+            <p>Target Survey name: &nbsp; &nbsp;{{listdata.target[0].survey_title}}</p>
+        </div>
+        <div class="">
+            <div class=" cells">
+                <ng-container *ngFor="let btn of toggleBtn; let i =index">
+                        <button (click)="toggletype(btn.type)"   [ngStyle]="{'border-bottom' : selectbutton === btn.type ? '2px solid black' : '' }">{{btn.name}}(1)</button>
+                </ng-container>
+    
+              </div>
+            <div class="child">
+                <div class="scrolldata">
+                    <div >
+                     <div class="adfg" *ngFor="let data of listdata[selectType]; let i =index">
+                        <div class="makealign">
+                            <div>
+    
+                                <div class="cell">
+                                    <p><span>{{data.cell}}</span><span>{{data.cnt_id}}</span></p>
+                                    <p>{{data.cell_name}}</p>
+                                </div>
+                                <div class="platform">
+                                <p>platform</p>
+                                <p>{{data.platform}}</p>
+                                </div>
+                            </div>
+    
+                            <div class="video-upload">
+                                <video [src]="data.
+cell_video_url
+" height="150px" width="120px"  [id]="selectType + 'video'+(i+1)" preload="metadata"></video>
+                            </div>
+    
+                            <div class="single" *ngIf="selectType !== 'cmptt'">
+                                <button mat-raised-button class=" btn btn-primary bg-primary text-white">
+                                  View Flags
+                                </button>
+                                <button mat-raised-button class=" btn btn-primary bg-primary text-white" *ngIf="data.status == 1">
+                                  Make Live
+                                </button>
+                                <button mat-raised-button class=" btn btn-primary bg-primary text-white" >
+                                  Preview Link
+                                </button>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

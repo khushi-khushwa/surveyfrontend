@@ -1,0 +1,45 @@
+.makecenter{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.formcontent{
+    width:100%;
+
+}
+
+.formimage{
+    
+    width:80%;
+}
+
+form{
+    width:100%;
+    input{
+        width:100%;
+    }
+}
+
+.loginbutton{
+    border:none;
+    background-color: #0B66C2;;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width:5rem;
+    color:white;
+    border-radius:0.8rem;
+    font-size: 1rem;
+  
+}
+
+a{
+    margin-left:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

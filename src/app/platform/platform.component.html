@@ -1,0 +1,49 @@
+<div class="grandfather">
+
+    <div class="parent">
+        <div class="detail" *ngIf="listdata">
+            <p>Platform</p>
+        </div>
+        <div class="">
+         
+            <div class="child">
+                <div class="scrolldata">
+                    <div >
+                     <div class="adfg" *ngFor="let data of listdata[selectType]; let i =index">
+                        <div class="makealign">
+                            <div>
+
+                                <div class="cell">
+                                    <p><span>{{data.cell}}</span><span>{{data.cnt_id}}</span></p>
+                                    <p>{{data.cell_name}}</p>
+                                </div>
+                                <div class="platform">
+                                <p>platform</p>
+                                    <p>{{data.platform}}</p>
+                                </div>
+                            </div>
+    
+                            <div class="video-upload">
+                                <video [src]="data.
+cell_video_url
+" height="150px" width="120px"  [id]="selectType + 'video'+(i+1)" preload="metadata"></video>
+                            </div>
+    
+                            <div class="single">
+                                <button mat-raised-button class=" btn btn-primary bg-primary text-white" >
+                                   Details
+                                </button>
+                                <!-- <button mat-raised-button class=" btn btn-primary  text-white" >
+                                  Preview
+                                </button> -->
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

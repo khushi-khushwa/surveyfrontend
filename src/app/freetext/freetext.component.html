@@ -1,0 +1,66 @@
+<div  class="container-fluid">
+
+  <div class="upperhead">
+
+    <h5 style="color: rgb(84, 24, 132) !important;">Add {{ type }} type question</h5>
+    <!-- <div class="previewbutton"> -->
+      <button  class="previewbutton" (click)="openpreview()">Preview</button>
+<!-- </div> -->
+  </div>
+  <div>
+    <mat-radio-group>
+      <mat-radio-button
+        *ngFor="let name of text; let i = index"
+        [checked]="name.checked"
+        [value]="name.name"
+        (change)="radiochange(i, name.checked, name.name)"
+      >
+        {{ name.name }}
+      </mat-radio-button>
+    </mat-radio-group>
+<form [formGroup]="optionForm">
+
+  <div class="questionalign">
+    <app-write-question [question]="optionForm.get('question')" style="width: 100%"></app-write-question>
+    <!-- <mat-form-field style="width: 77%">
+      <input matInput type="text" placeholder="enter question" formControlName="question"/>
+    </mat-form-field> -->
+    <mat-form-field style="width: 21%">
+      <input matInput type="text" placeholder="question SPSS" formControlName="SPSS"/>
+    </mat-form-field>
+  </div>
+ 
+
+  <ng-container *ngFor="let option of optionForm.get('option')['controls']; let i=index ">
+    
+    <div [formArrayName]="'option'"  class="answeroption" >
+          <div [formGroupName]="i">
+            <div *ngIf="!selectradio">
+            <mat-form-field style="width: 100%">
+              <input matInput type="text" placeholder="Answer" formControlName="option"/>
+            </mat-form-field>
+            </div>
+        
+          <div *ngIf="selectradio">
+            <mat-form-field style="width: 100%">
+              <input matInput type="text" placeholder="option" formControlName="option"/>
+            </mat-form-field>
+        <mat-icon *ngIf="i > 0 " (click)="deleteOption(i)">delete</mat-icon>
+          </div>
+        </div>
+          </div>
+  </ng-container>
+
+  <button class="btn btn-primary"  *ngIf ="radioname === 'Multiple freetext'"       (click)="addOption()">Option</button>
+
+  <div class="formbutton">
+
+    <button class="cancelbutton" (click)="navigateto()">
+      cancel
+    </button>
+
+    <button class="savebutton" (click)="submit()">save</button>
+  </div>
+</form>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.graphcontrol{
+    display: flex;
+    gap:2rem;
+    align-items: center;
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.colorpicker{
+    display: flex;
+    gap:2rem;
+}   
+input[type="color"] {
+	
+border: 1px solid #a7a1a1;
+    border-radius: 10px;
+    width: 56px;
+    height: 30px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+.toggle{
+     display: flex;
+     justify-content: end;
+     margin-right:2rem;
+}
+

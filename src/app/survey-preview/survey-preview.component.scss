@@ -1,0 +1,15 @@
+.question{
+    background-color: rgb(192, 244, 192);
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.gap{
+   display: flex;
+   flex-direction: column;
+   gap:1rem;
+   height: 30rem;
+}

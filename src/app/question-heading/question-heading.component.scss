@@ -1,0 +1,31 @@
+.questionheading{
+    height: 4rem;
+    background-color: rgb(180, 243, 187);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    align-items: center;
+}
+.questionindex{
+    display: flex;
+justify-content: center;
+align-items: center;
+gap:2rem;
+}
+.question{
+    display: flex;
+justify-content: center;
+align-items: center;
+gap:0.8rem;
+}
+p{
+    margin-bottom: 0px;
+}
+
+.endpart{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}

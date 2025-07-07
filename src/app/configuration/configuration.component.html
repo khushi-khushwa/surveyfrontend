@@ -1,0 +1,58 @@
+
+<div class="grandfather">
+
+    <div class="parent">
+        <div class="detail" *ngIf="listdata">
+           <p>configuration</p>
+        </div>
+        <div class="">
+
+            <div class="child">
+                <div class="scrolldata">
+                    <div [formGroup]="mainForm">
+                     <div class="adfg" *ngFor="let data of listdata[selectType]; let i =index">
+                        <div [formArrayName]="selectType">
+
+                            <div class="makealign">
+                                <div>
+    
+                                    <div class="cell">
+                                        <p><span>{{data.cell}}</span><span>{{data.cnt_id}}</span></p>
+                                        <p>{{data.cell_name}}</p>
+                                    </div>
+                                    <div class="platform">
+                                    <p>platform</p>
+                                    <p>{{data.platform}}</p>
+                                    </div>
+                                </div>
+        
+                                <!-- <div class="video-upload">
+                                    <video [src]="data.video" height="150px" width="120px"  [id]="selectType + 'video'+(i+1)" preload="metadata"></video>
+                                </div> -->
+    
+                                <div>configuration</div>
+    
+                                <div class="selectfield" [formArrayName]="i">
+                                        <mat-form-field appearance="outline">
+                                         <mat-label>Select Configuration</mat-label>
+                                         <mat-select  formControlName="configuration">
+                                             <ng-container *ngFor=" let option of configure">
+                                                
+                                                 <mat-option>
+                                                       {{option.name}}
+                                                 </mat-option>
+                                             </ng-container>
+                                         </mat-select>
+                                        </mat-form-field>
+                                    </div>
+
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

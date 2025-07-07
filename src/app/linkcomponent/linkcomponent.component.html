@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <ng-container *ngFor="let links of data">
+        <div class="sidebarlinks">
+            <p  [routerLink]='links.link' >{{links.name | uppercase}}</p>
+        </div>
+       <div>
+
+       </div>
+    </ng-container>
+</div>

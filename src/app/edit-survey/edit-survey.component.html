@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <app-single-multiple *ngIf="data.questionType === 'single' || data.questionType === 'multiple'" [update]="data.question"   [type]="data.questionType"  [form]="data"  (submitquestion)="dataEmmit($event)"></app-single-multiple>
+        <app-grid *ngIf="data.questionType === 'grid'" [update]="data.question"   [type]="data.questionType"  [form]="data"  (submitquestion)="dataEmmit($event)"></app-grid>
+        <app-freetext *ngIf="data.questionType === 'freetext'" [update]="data.question"   [type]="data.questionType"  [form]="data"  (submitquestion)="dataEmmit($event)"></app-freetext>
+        <app-numeric *ngIf="data.questionType === 'numeric'" [update]="data.question"   [type]="data.questionType"  [form]="data"  (submitquestion)="dataEmmit($event)"></app-numeric>
+        <app-image *ngIf="data.questionType === 'image'" [update]="data.question"   [type]="data.questionType"  [form]="data"  (submitquestion)="dataEmmit($event)"></app-image>
+        
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="maindiv">
+    <div class="dashboard">
+        <div class="logoimg">
+            <img src="assets/logofull.svg"/>
+        </div>
+        <div>
+            <app-linkcomponent [data]="sidebar"></app-linkcomponent>
+        </div>
+    </div>
+    
+    <div class="datadiv">
+            <app-navbar (buttonClicked)="sidenav($event)"></app-navbar>
+      <div class="container-fluid">
+          <app-content></app-content>
+      </div>
+    </div>
+    </div>

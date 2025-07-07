@@ -1,0 +1,16 @@
+
+<div>
+    <div  *ngFor="let data  of previewQuestion; let i=index" class="fb">
+        <ng-container *ngIf="data.questionType === 'single' || data.questionType === 'multiple'">
+            <app-question-heading  [question]="{question:data, index:header}"></app-question-heading>
+                <app-option [options]="data.option" [type]="data.questionType"
+                 [question]="previewQuestion">
+                </app-option>
+    
+        </ng-container>
+    </div>
+</div>
+
+
+
+  

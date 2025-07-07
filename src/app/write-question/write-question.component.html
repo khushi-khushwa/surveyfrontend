@@ -1,0 +1,15 @@
+<div >
+    <mat-form-field style="width:100%" >
+      <input matInput placeholder="Type your question" [formControl]="question" />
+  
+      <mat-error *ngIf="question.hasError('required')">
+
+        Question is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+<!-- 
+    <mat-form-field>
+        <input matInput placeholder="que id" [value]="" [formControl]="que_id"/>
+    </mat-form-field>
+     -->
+  </div>

@@ -1,0 +1,91 @@
+
+.grandfather{
+    display: flex;
+        justify-content: center;
+        width: 100%;
+}
+
+.detail{
+    background-color: rgba(180, 203, 255, 0.6);
+    height: 5rem;
+    padding: 1rem;
+    p{
+        margin-bottom: 0px;
+      
+            font-weight: 500;
+        
+    }
+}
+
+.parent{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height:80vh;
+    margin-top:1rem;
+    width:80%;
+    
+}
+
+.cells{
+    display: flex;
+    justify-content: end;
+    padding-right: 2.6rem;
+    margin-top: 2rem;
+    align-items: center;
+    gap:2rem;
+    padding-inline:1rem;
+    button{
+        border: none;
+        background-color: transparent;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.5rem;
+    }
+}
+
+.makealign{
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top:1rem;
+        margin-bottom:1rem;
+}
+
+
+
+.platform  , .cell
+{
+    display: flex !important;
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.child{
+    
+    overflow: auto;
+    margin:0px 2rem 0px 2rem;
+}
+
+.scrolldata{
+  
+    overflow: scroll;
+    height:57vh;
+    overflow: auto;
+}
+
+.adfg{
+    border:1px solid rgb(188, 186, 186);
+    margin:10px 0px 10px 0px;
+
+}
+
+
+.single{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    button{
+        border: none;
+        
+    }
+}

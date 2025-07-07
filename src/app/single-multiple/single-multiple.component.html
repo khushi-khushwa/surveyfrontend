@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="upperhead">
+
+    <h5 style="color: rgb(84, 24, 132) !important;">Add {{ type }} type question</h5>
+    <!-- <div class="previewbutton"> -->
+      <button  class="previewbutton" (click)="openpreview()">Preview</button>
+<!-- </div> -->
+  </div>
+
+  <div>
+    <form [formGroup]="singleForm">
+      <!-- <div class="previewbutton">
+        <button (click)="openpreview()" >Preview</button>
+      </div> -->
+
+      <div>
+        <div class="questionalign">
+          <app-write-question [question]="singleForm.get('question')"   style="width: 100%"></app-write-question>
+          <mat-form-field style="width: 21%">
+            <input matInput type="text" formControlName="SPSS" placeholder="question SPSS" />
+          </mat-form-field>
+        </div>
+             
+        <h6>Answer</h6>
+        <div [formArrayName]="'option'" *ngFor="
+            let option of singleForm.get('option')['controls'];
+            let i = index
+          " class="make">
+          <div [formGroupName]="i" class="makealign ">
+            <div *ngIf="type == 'single'" class="">
+              <mat-radio-button></mat-radio-button>
+            </div>
+
+            <div *ngIf="type == 'multiple'">
+              <mat-checkbox></mat-checkbox>
+            </div>
+            <div class="optionalign">
+              <mat-form-field style="width: 70%" >
+                <input matInput formControlName="option" [placeholder]="
+                    option.value.type === 'none'
+                      ? 'none of these'
+                      : option.value.type === 'other'
+                      ? 'Other than these options'
+                      : 'answer' + (i + 1)
+                  " />
+              </mat-form-field>
+              <mat-form-field style="width: 30%">
+                <input matInput formControlName="SPSS" [placeholder]="'Enter option SPSS' + (i + 1)" />
+              </mat-form-field>
+            </div>
+            <mat-icon (click)="deletoption(i)">delete</mat-icon>
+          </div>
+        </div>
+        <app-add-more-option [optionform]="singleForm.get('option')"></app-add-more-option>
+      </div>
+      <div class="formbutton">
+
+        <button class="cancelbutton" (click)="navigateto()">
+          cancel
+        </button>
+  
+        <button class="savebutton" (click)="submit()">save</button>
+      </div>
+    </form>
+  </div>
+</div>

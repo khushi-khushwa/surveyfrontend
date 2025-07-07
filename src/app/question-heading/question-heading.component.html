@@ -1,0 +1,32 @@
+<!-- <div><p>{{question.index}}</p></div> -->
+<div>
+    
+    <div class="questionheading">
+        <div class="questionindex">
+            <p>Q.{{question.index}}.</p>
+            <div class="question">
+                <p>S{{question.question.SPSS}}</p>
+                <p>{{question.question.question}}</p>
+            </div>
+        </div>
+
+        <div class="endpart">
+            <p>{{question.question.questionType}}</p>
+            <button mat-icon-button  [matMenuTriggerFor]="menu"  aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu    #menu="matMenu"   yPosition="above" >
+                <button mat-menu-item  *ngFor="let action of actions"  (click)="action.perform(question.question)">
+                    <div class="d-flex  align-item-center gap-3">
+
+                        <span class="material-symbols-outlined">
+                           {{action.icon}}
+                            </span>
+                      <span >{{action.name}}</span>
+                    </div>
+                </button>
+              </mat-menu>
+        </div>
+    </div>
+    
+</div>

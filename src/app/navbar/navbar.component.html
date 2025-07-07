@@ -1,0 +1,14 @@
+<div class="navbar">
+
+    <div >
+        <mat-icon class="arrowicon" (click)="arrow()" *ngIf="!opened">keyboard_arrow_left</mat-icon>
+        <mat-icon class="arrowicon" (click)="arrow()" *ngIf="opened">menu</mat-icon>
+       
+    </div>
+
+
+    <div class="usericon">
+        <button (click)="logout()">Log Out</button>
+        <img  src="assets/avatar.svg" />
+    </div>
+</div>

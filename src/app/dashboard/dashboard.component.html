@@ -1,0 +1,70 @@
+
+<div class="coontainer">
+    <div class="row">
+        <div class="singleinput">
+                <form [formGroup]="cmpForm">
+                      <div class="input">
+                              <input  placeholder="" type='text' formcontrolName="selectcmp" >
+    
+                              <button (click)="formroute()" class="createcmp">Create new <mat-icon>add</mat-icon></button>
+                      </div>
+                </form>   
+        </div>
+    </div>
+<!-- <div class="row">
+    <div class="surveys">
+        <ng-container *ngFor="let key of obj">
+            <div class="datasurvey">
+                <p>{{key.keys}}</p>
+                <p>{{key.length}}</p>
+            </div>
+        </ng-container> 
+    </div>
+</div> -->
+<div class="row">
+    <ng-container *ngFor="let key of obj; let i=index">
+        <div class="col-md-4 mb-sm-5 mb-2 p-0 p-sm-3">
+            <div class="survey-stats-box" (click)="selectsurvey(key.keys, i)" 
+                [ngStyle]="{'background' : this.selectedCampTypes === i ? 'rgba(29, 170, 202, 0.25)' : 'white'}">
+                <div class="top-stats">
+                    <p>{{key.keys}}</p>
+                  
+                </div>
+                <div class="stats-value">
+                    <h1 [ngStyle]="{'color': i === 1 ?  '#117D4E' : i===2 ? '#7056F6' : '#EB2300' }">
+                        {{key.length}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<!-- <div class="row mb-4 mt-4 mt-sm-0 mb-sm-2">
+    <div class="col-md-12 p-0 p-sm-3">
+        <div class="example-container">
+            <mat-form-field vstyle="width: 100%;" [formGroup]="selectForm" >
+        <mat-label>Select Survey</mat-label>
+        <mat-select  formControlName="selectoption">
+
+            <mat-option *ngFor="let data of alldata" >{{data.study_name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+          </div>
+    </div>
+</div> -->
+<div class="row mb-4 mt-4 mt-sm-0 mb-sm-2">
+    <div class="col-md-12 p-0 p-sm-3">
+        <div class="example-container">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Select Survey</mat-label>
+                <mat-select >
+                    <mat-option *ngFor="let data of alldata" >{{ data.study_name }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+    </div>
+</div>
+</div> 
+
+
+

@@ -1,0 +1,109 @@
+<div  class="container-fluid">
+  <div>
+
+    <mat-radio-group>
+      <mat-radio-button
+        *ngFor="let name of gridOption; let i = index"
+        [checked]="name.checked"
+        [value]="name.name"
+        (change)="radiochange(i, name.checked, name.name)"
+      >
+        {{ name.name }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="upperhead">
+
+    <h5 style="color: rgb(84, 24, 132) !important;">Add {{ type }} type question</h5>
+    <!-- <div class="previewbutton"> -->
+      <button  class="previewbutton" (click)="openpreview()">Preview</button>
+<!-- </div> -->
+  </div>
+    <div>
+     
+  <form [formGroup]="gridForm">
+  
+    <div class="questionalign">
+        <app-write-question [question]="gridForm.get('question')" style="width: 100%"></app-write-question>
+      <!-- <mat-form-field style="width: 77%">
+        <input matInput type="text" placeholder="enter question" formControlName="question"/>
+      </mat-form-field> -->
+      <mat-form-field style="width: 21%">
+        <input matInput type="text" placeholder="question SPSS" formControlName="SPSS"/>
+      </mat-form-field>
+    </div>
+   
+  <div class="d-flex gap-5">
+          <div class="d-flex flex-column">
+
+              <div [formArrayName]="'option'"  *ngFor="let option of gridForm.get('option')['controls']; let i=index ">
+                    <div [formGroupName]="i">
+            
+                        <div class="questionalign">
+                            <mat-form-field style="width: 80%">
+                              <input matInput type="text" placeholder="option" formControlName="option"/>
+                            </mat-form-field>
+                            <mat-form-field style="width: 20%">
+                              <input matInput type="text" placeholder="SPSS" formControlName="SPSS"/>
+                            </mat-form-field>
+                        
+                           
+                            <mat-icon *ngIf="optionshow" (click)="deleteOption(i, 'option')">delete</mat-icon>
+                          </div>
+                        </div>
+                    </div>
+                    <button class="addbutton"  (click)="optionAdd()">
+                      <mat-icon>add</mat-icon>
+                      <mat-form-field style="width: 100%">
+                        <input matInput pointer placeholder="Add more values" >
+                      </mat-form-field>
+                  </button>
+          </div>
+
+
+      <div class="d-flex flex-column">
+
+          <div [formArrayName]="'values'"  *ngFor="let option of gridForm.get('values')['controls']; let i=index " >
+            
+  
+                  <div [formGroupName]="i">
+               
+                    <div class="questionalign">
+                        <mat-form-field style="width: 80%">
+                          <input matInput type="text" placeholder="value" formControlName="option"/>
+                        </mat-form-field>
+                        <mat-form-field style="width: 20%">
+                          <input matInput type="text" placeholder="SPSS" formControlName="SPSS"/>
+                        </mat-form-field>
+                        <mat-icon *ngIf="valueshow" (click)="deleteOption(i, 'values')">delete</mat-icon>
+                    </div>
+                  
+                    
+                      </div>
+              </div>
+
+              <button class="addbutton" (click)="valuesAdd()">
+                <mat-icon >add</mat-icon>
+                <mat-form-field style="width: 100%">
+                  <input matInput pointer placeholder="Add more values" >
+                </mat-form-field>
+            </button>
+      </div>
+  
+          
+   
+  </div>
+
+
+  
+  <div class="formbutton">
+
+    <button class="cancelbutton" (click)="navigateto()">
+      cancel
+    </button>
+
+    <button class="savebutton" (click)="submit()">save</button>
+  </div>
+  </form>
+    </div>
+  </div>

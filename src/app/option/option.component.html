@@ -1,0 +1,61 @@
+<div *ngIf="options">
+<ng-container  *ngFor="let d of options">
+    <div *ngIf="type === 'single'">
+     <mat-radio-button>{{d.option}}</mat-radio-button>
+    </div>
+
+    <div *ngIf="type === 'multiple'">
+        <mat-checkbox>{{d.option}}</mat-checkbox>
+       </div>
+
+       
+    <div *ngIf="type === 'freetext'">
+        <mat-checkbox>{{d.option}}</mat-checkbox>
+       </div>
+
+           
+   
+
+    
+       <div *ngIf="type === 'numeric'">
+        <div class="px-4">
+
+            <p>{{d}}</p>
+        </div>
+       </div>
+
+
+</ng-container>
+
+<div *ngIf="type === 'image'">
+    <div class="my-3 px-3">
+        <img [src]="options"  style="width:10rem; height: 6rem;"/>
+    </div>
+   </div>
+
+
+<div *ngIf="type === 'grid'">
+    <div class="grid">
+        <div>
+            <p>option</p>
+            <ng-container  *ngFor="let d of options">
+                <ul>
+                    <li>
+                        {{d.option}}
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+        <div>
+            <p>values</p>
+            <ng-container  *ngFor="let d of value">
+                <ul>
+                    <li>
+                       <input matInput type="text"/>
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+    </div>
+   </div>
+</div>

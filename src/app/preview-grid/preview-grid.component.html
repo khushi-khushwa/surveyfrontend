@@ -1,0 +1,24 @@
+
+<div  class="container-fluid">
+    <div  *ngFor="let data  of previewQuestion; let i=index" class="fb">
+        <ng-container *ngIf="data.questionType === 'grid'">
+            <app-question-heading  [question]="{question:data, index:header}"></app-question-heading>
+            <!-- <div *ngFor="let option of data.option">
+
+                <app-option [options]="option" 
+                 [question]="previewQuestion">
+        
+                </app-option>
+            </div> -->
+
+                <app-option [options]="data.option" [value]="data.values" [type]="data.questionType"
+                 [question]="previewQuestion">
+        
+                </app-option>
+    
+        </ng-container>
+
+        
+
+    </div>
+</div>

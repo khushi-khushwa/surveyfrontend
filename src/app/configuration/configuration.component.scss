@@ -1,0 +1,61 @@
+
+.grandfather{
+    display: flex;
+        justify-content: center;
+        width: 100%;
+}
+
+.detail{
+    background-color: rgba(180, 203, 255, 0.6);
+    height: 4rem;
+    padding: 1rem;
+}
+
+.parent{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height:80vh;
+    margin-top:1rem;
+    width:80%;
+    
+}
+
+.child{
+ 
+    overflow: auto;
+    margin:0px 2rem 0px 2rem;
+}
+
+
+.scrolldata{
+    margin-top:2rem;
+    overflow: scroll;
+    height:57vh;
+    overflow: auto;
+   
+}
+
+.adfg{
+    border:1px solid rgb(191, 189, 189);
+    margin:10px 0px 10px 0px;
+
+}
+
+
+.cell , .platform{
+    display: flex !important;
+        gap: 7rem;
+        justify-content: center;
+        align-items: center;
+        
+}
+
+.makealign{
+    display: flex !important
+    ;
+        justify-content: space-around;
+        align-items: center;
+}
+
+.selectfield{
+    padding: 2rem;
+}

@@ -1,0 +1,200 @@
+<!-- <div class="d-flex align-items-center justify-content-center "> -->
+
+  <form [formGroup]="personal" class="firstmain">
+ 
+
+      <div class="main">
+        <div
+          class="shadowline"
+          *ngFor="let leftsection of left; let i = index"
+          [formGroupName]="leftsection.formGroup"
+        >
+          <p class="heading">{{ leftsection.heading }}</p>
+    
+          <div class="first" *ngIf="leftsection.images">
+            <div
+              *ngFor="let image of leftsection.images; let i = index"
+              class="firstflex"
+              [style.border]="
+                activeborder == i ? '4px solid green' : '4px solid gray'
+              "
+              (click)="toggleInput(i)"
+            >
+              <img
+                [src]="image.image"
+                [ngStyle]="{
+                  width: i == 1 ? '55%' : '',
+                  height: i == 1 ? '77%' : ''
+                }"
+                class="images"
+              />
+            </div>
+          </div>
+          <div class="formdesign">
+            <div *ngFor="let controls of leftsection.formControls" class="givepadi">
+              <div *ngIf="controls.type !== 'select'">
+                <mat-form-field class="w-100" appearance="outline">
+                  <input
+                    matInput
+                    [type]="controls.type"
+                    placeholder="{{ controls.placeholder }}"
+                    [formControlName]="controls.name"
+                  />
+                </mat-form-field>
+              </div>
+              <div *ngIf="controls.type === 'select'">
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>{{ controls.name }}</mat-label>
+                  <mat-select [formControlName]="controls.name">
+                    <mat-option
+                      *ngFor="let options of controls.Options"
+                      [value]="options.name"
+                    >
+                      {{ options.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="second">
+        <div
+          *ngFor="let rightsection of right; let i = index"
+          class=""
+          [formGroupName]="rightsection.formGroup"
+          class="secondmain"
+        >
+          <p class="heading">{{ rightsection.heading }}</p>
+          <div class="overflows">
+            <div
+              *ngFor="let controls of rightsection.formControls; let j = index"
+              class="pt-2"
+            >
+              <mat-form-field
+                *ngIf="controls.type !== 'multiple'"
+                class="w-100 secondpadding"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  [type]="controls.type"
+                  placeholder="{{ controls.placeholder }}"
+                  [formControlName]="controls.name"
+                />
+              </mat-form-field>
+              <ng-container
+                *ngIf="controls.type == 'multiple' && controls.hidden !== true"
+              >
+                <div [formArrayName]="controls.name" style="width: 110%">
+                  <div
+                    *ngFor="
+                      let group of personal['controls'][rightsection.formGroup][
+                        'controls'
+                      ][controls.name]['controls'];
+                      let k = index
+                    "
+                    [formGroupName]="k"
+                    class="secondflex"
+                  >
+                    <mat-form-field class="secondpadding" appearance="outline">
+                      <input
+                        matInput
+                        [type]="controls.controls[k].type"
+                        [placeholder]="controls.controls[k].placeholder"
+                        [formControlName]="controls.controls[k].name"
+                      />
+                    </mat-form-field>
+                    <div class="icons">
+                      <button
+                        *ngIf="
+                          k <
+                          personal['controls'][rightsection.formGroup]['controls'][
+                            controls.name
+                          ].length -
+                            1
+                        "
+                        (click)="removeEntry(controls.name, controls, k)"
+                      >
+                        <mat-icon>clear</mat-icon>
+                      </button>
+                    </div>
+                    <div class="icons">
+                      <button
+                        *ngIf="
+                          k ==
+                          personal['controls'][rightsection.formGroup]['controls'][
+                            controls.name
+                          ].length -
+                            1
+                        "
+                        (click)="addform(controls.name, controls)"
+                      >
+                        <mat-icon>add_circle_outline</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+    
+              <div *ngIf="podhide">
+                <ng-container
+                  *ngIf="controls.type == 'multiple' && controls.hidden == true"
+                >
+                  <div [formArrayName]="controls.name">
+                    <div
+                      *ngFor="let group of controls.controls; let i = index"
+                      [formGroupName]="i"
+                      class="secondflex"
+                    >
+                      <mat-form-field class="secondpadding" appearance="outline">
+                        <input
+                          matInput
+                          [type]="group.type"
+                          [placeholder]="group.placeholder"
+                          [formControlName]="group.name"
+                        />
+                      </mat-form-field>
+                      <div class="icons">
+                        <button
+                          *ngIf="
+                            i <
+                            personal['controls'][rightsection.formGroup][
+                              'controls'
+                            ][controls.name].length -
+                              1
+                          "
+                          (click)="removeEntry(controls.name, controls, i)"
+                        >
+                          <mat-icon>clear</mat-icon>
+                        </button>
+                        <div class="icons">
+                          <button
+                            *ngIf="
+                              i ==
+                              personal['controls'][rightsection.formGroup][
+                                'controls'
+                              ][controls.name].length -
+                                1
+                            "
+                            (click)="addform(controls.name, controls)"
+                          >
+                            <mat-icon>add_circle_outline</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sese">
+          <button class="button" (click)="submit()">submit</button>
+        </div>
+      </div>
+
+  </form>
+<!-- </div> -->

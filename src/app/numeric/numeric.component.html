@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="upperhead">
+
+    <h5 style="color: rgb(84, 24, 132) !important;">Add {{ type }} type question</h5>
+    <!-- <div class="previewbutton"> -->
+      <button  class="previewbutton" (click)="openpreview()">Preview</button>
+<!-- </div> -->
+  </div>
+
+    <form [formGroup]="numericForm">
+
+        <div class="questionalign">
+          <app-write-question [question]="numericForm.get('question')" style="width: 100%"></app-write-question>
+            <!-- <mat-form-field style="width: 77%">
+              <input matInput type="text" placeholder="enter question" formControlName="question"/>
+            </mat-form-field> -->
+            <mat-form-field style="width: 21%">
+              <input matInput type="text" placeholder="question SPSS" formControlName="SPSS"/>
+            </mat-form-field>
+          </div>
+  
+            <h6>Answer</h6>
+            <div class="addbutton">
+                    <button (click)="items.length <=5 ? warn('Can\'t remove more than 5'): items.pop()">
+                      
+                        <mat-icon class="icon-clz">remove_circle</mat-icon>
+                      </button>
+
+                      <div  *ngFor="let item of items; let i=index"  class="number" >{{item}}</div>
+                      
+                    <button (click)="items.length >= 10 ? warn('Can\'t add more than ten'): items.push(items.length + 1)">
+                    
+                        <mat-icon class="icon-clz">add_circle</mat-icon>
+                      </button>
+             
+            </div>
+
+
+          <div class="like">
+            <mat-form-field style="width: 30%">
+                <input matInput type="text" placeholder="extreme_like" formControlName="extreme_like"/>
+                <mat-icon matSuffix>edit</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field style="width: 30%">
+                <input matInput type="text" placeholder="not like" formControlName="like"/>
+                <mat-icon matSuffix>edit</mat-icon>
+              </mat-form-field>
+          </div>
+
+          <div class="formbutton">
+
+            <button class="cancelbutton" (click)="navigateto()">
+              cancel
+            </button>
+      
+            <button class="savebutton" (click)="submit()">save</button>
+          </div>
+    </form>
+</div>

@@ -1,0 +1,103 @@
+.choicequestion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+flex-wrap:wrap;
+
+.createquestion{
+    margin: 4rem 0rem 4rem 0rem;
+}
+    .question{
+        height: 3.5rem;
+        width:11rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        border:2px solid rgb(84, 24, 132);
+        border-radius: 10px;
+        gap:0.7rem;
+    }
+
+   span, mat-icon{
+        color:rgb(84, 24, 132);
+    }
+
+}
+
+.text-question p, h6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+     color:rgb(84, 24, 132);
+}
+
+
+.uploadfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+    a{
+        text-decoration: none;
+        color:rgb(84, 24, 132);
+        font-weight: 500;
+    }
+    h6{
+        color:black;
+    }
+
+button{
+    border:none;
+    height:3rem;
+    width:7rem;
+    border-radius: 1.2rem;
+
+
+}
+}
+
+input[type="file"]{
+    display: none;
+      }
+      
+ 
+ 
+   .custom-file-upload{
+    border: none;
+    background-color: white;
+    border-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.3rem 1.3rem 0.3rem 1rem;
+    box-shadow:4px 4px 12px rgb(139 145 142 / 46%);
+    height:2.2rem;
+    width:8rem;
+    margin-left:10px
+
+   }
+
+
+
+
+   .dragarea {
+    font-size: 1.5rem;
+    border: 3px solid #bbb;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #bbb;
+}
+
+.droparea {
+  font-size: 1.5rem;
+  border: 3px dashed #bbb;
+  padding: 1.5rem;
+  background-color: #eff;
+  color: #aaa;
+}

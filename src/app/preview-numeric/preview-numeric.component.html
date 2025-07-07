@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div  *ngFor="let data  of previewQuestion; let i=index" class="fb">
+        <ng-container *ngIf="data.questionType === 'numeric'">
+            <app-question-heading  [question]="{question:data, index:header}"></app-question-heading>
+       
+
+                <app-option [options]="data.item_length" [type]="data.questionType"
+                 [question]="previewQuestion">
+        
+                </app-option>
+    
+        </ng-container>
+
+    
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="survey">
+    <div  class="surveypreview">
+
+        <ng-container [ngSwitch]="selecttab">
+            <app-create-question *ngSwitchCase="0"   (tabSelected)="selectTab($event)"></app-create-question>
+            <app-single-multiple  *ngSwitchCase="1" (tabSelected)="selectTab($event)" [type]="'single'"    (editOutput)="updatequestion($event,true)" (submitquestion)="handleQuestion($event,false)"></app-single-multiple>
+            <app-single-multiple  *ngSwitchCase="2"  (tabSelected)="selectTab($event)"  [type]="'multiple'"   (submitquestion)="handleQuestion($event,false)"></app-single-multiple>
+            <app-numeric  *ngSwitchCase="3" (tabSelected)="selectTab($event)" [type]="'numeric'"    (submitquestion)="handleQuestion($event,false)"></app-numeric>
+            <app-freetext  *ngSwitchCase="4" (tabSelected)="selectTab($event)" [type]="'freetext'"    (submitquestion)="handleQuestion($event,false)"></app-freetext>
+            <app-grid  *ngSwitchCase="5" (tabSelected)="selectTab($event)" [type]="'grid'"   (submitquestion)="handleQuestion($event,false)"></app-grid>
+            <app-image  *ngSwitchCase="6" (tabSelected)="selectTab($event)" [type]="'image'"     (submitquestion)="handleQuestion($event,false)"></app-image>
+        </ng-container>
+    
+    
+        <div class="surveypreview">
+           <app-survey-preview [outputQuestion]="defaultQuestion">
+    
+           </app-survey-preview>
+        </div>
+    </div>
+</div>
+
+
+

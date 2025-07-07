@@ -1,0 +1,10 @@
+<div mat-dialog-container>
+    <!-- <h3 mat-card-title class="text-center mt-3">Delete</h3> -->
+    <p mat-dialog-content> 
+        Are you sure to delete {{data.SPSS}}
+    </p>
+    <div mat-dialog-actions class="d-flex gap-3 align-items-end justify-content-end pb-3">
+        <button mat-button  [mat-dialog-close]="true" (click)="deleteoption(data)">Ok</button>
+        <button mat-button  mat-dialog-close>Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="toggle">
+<mat-slide-toggle  [checked]="isInitiallyChecked" (click)="toggle(togglecolor[index])">{{togglecolor[index]}}</mat-slide-toggle>
+
+</div>
+<div class="main-container">
+    <form [formGroup]="graphForm" class="d-flex">
+        <div class="graphcontrol">
+
+            <div>
+         <mat-form-field appearance="outline">
+      <mat-label>Assets</mat-label>
+        <mat-select multiple formControlName="cnt_name" (selectionChange)="changevalue($event)">
+    <mat-option *ngFor="let option of assets" [value]="option.cnt_name" >
+      {{ option.cnt_name }}
+    </mat-option>
+
+      </mat-select>
+      
+    </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+      <mat-label>Metrics</mat-label>
+      <mat-select formControlName="metrics">
+        <mat-option *ngFor="let option of metrics" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+            </div>
+
+     
+
+    <div>
+        <button mat-raised-button color="primary" (click)="submit()">Upgrade Graph</button>
+    </div>
+    <div >
+  <mat-spinner *ngIf="loader" [diameter]="30"></mat-spinner>
+</div>
+        </div>
+
+
+
+    </form>
+
+  
+</div>
+
+  <div style="margin-left:4rem">
+    <p>Change Line Color</p>
+    <div class="colorpicker">
+      <ng-container *ngFor="let  color of colorpicker; let  i=index">
+          <p>{{color.name}}</p>
+        <input mat-input  [type]="color.type" class="colorinput"  [value]="color.value" (input)="selectColor($event, i)"/>
+      </ng-container>
+
+    </div>
+    </div>
+    <div style="margin:0rem 4rem 0rem 4rem;">
+
+      <div id="chartcontainer" style="width: 100%; height: 500px;"></div>
+    </div>
+
+<!-- 
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"  style="width: 100%; height: 500px; display: block;">
+</highcharts-chart> -->

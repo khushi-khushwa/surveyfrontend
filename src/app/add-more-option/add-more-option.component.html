@@ -1,0 +1,10 @@
+ <div class="otheroption" >
+    <!-- <mat-icon>add_circle</mat-icon>
+<p>Add<span class="special">More Option</span> or <span class="special"> other</span>, <span class="special">Exclusive all</span> ,<span class="special">Freetext</span>  type option</p> -->
+<p>Add more option</p>
+<ng-container *ngFor="let option of extraOption">
+    <p (click)="addMoreOption(option.name)" class="optionstyle"> {{option.name+','}}</p>
+
+</ng-container>
+</div>
+
