@@ -6,7 +6,7 @@ import { FormservicesService } from '../serivce/formservices.service';
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent implements OnInit ,  OnChanges{
-
+    loader:boolean=true;
   QuestionCategory = [
     {
       name:'single/Multiple',
@@ -70,13 +70,16 @@ this.selecttab= e
  ngOnInit(): void {
   this.formservices.delSub.subscribe(res => {
     console.log(res,"hello subject")
-    this.getData()});
- this.getData();
+    this.getData();
+  });
+
  }
  getData(){
+  this.loader=true;
   this.formservices.getdata('survey').subscribe((res)=>{
     console.log(res)
     this.defaultQuestion= res
    })
+   this.loader=false;
  }
 }
