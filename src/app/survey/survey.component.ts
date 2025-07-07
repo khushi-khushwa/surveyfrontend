@@ -63,7 +63,8 @@ this.selecttab= e
 
  updatequestion(e, type){
    this.formservices.updataformdata('survey',e, e.id).subscribe((res)=>{
-          console.log(res)
+          console.log(res);
+          this.getData();
  })
 }
 
