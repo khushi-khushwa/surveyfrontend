@@ -57,7 +57,7 @@ this.selecttab= e
   console.log(event)
   this.formservices.postdata('survey',event).subscribe((res)=>{
     console.log(res)
-    
+    this.getData();
   })
  }
 
