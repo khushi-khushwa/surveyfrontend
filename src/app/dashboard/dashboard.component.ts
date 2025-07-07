@@ -38,13 +38,17 @@ ngOnInit(): void {
     console.log(res)
     this.ress = res[0]
     console.log(this.ress)
-    this.keys = Object.keys(this.ress)
+    this.keys = Object.keys(this.ress).slice(2)
        for(let i of this.keys ){
         console.log(this.ress[i].length)
-        const length = this.ress[i].length ;
-        
-        this.obj.push({length: length.toString() ,keys:i})
+        // if(i <3){
+
+          const length = this.ress[i].length ;
+             this.obj.push({length: length.toString() ,keys:i})
         console.log(this.slength)
+        // }
+        
+     
       
         
        }

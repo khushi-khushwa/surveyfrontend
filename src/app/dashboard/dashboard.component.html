@@ -52,15 +52,27 @@
           </div>
     </div>
 </div> -->
-<div class="row mb-4 mt-4 mt-sm-0 mb-sm-2">
+<!-- <div class="row mb-4 mt-4 mt-sm-0 mb-sm-2">
     <div class="col-md-12 p-0 p-sm-3">
         <div class="example-container">
-            <mat-form-field style="width: 100%;">
-                <mat-label>Select Survey</mat-label>
+            <mat-form-field style="width: 100%;" >
+               
                 <mat-select >
                     <mat-option *ngFor="let data of alldata" >{{ data.study_name }}</mat-option>
                 </mat-select>
               </mat-form-field>
+          </div>
+    </div>
+</div> -->
+<div class="row mb-4 mt-4 mt-sm-0 mb-sm-2">
+    <div class="col-md-12 p-0 p-sm-3">
+        <div class="example-container">
+            <!-- <mat-form-field style="width: 100%;" > -->
+                <select class="styleselect">
+                    <option selected disabled>select option</option>
+                    <option *ngFor="let data of alldata" >{{ data.study_name }}</option>
+                </select>
+              <!-- </mat-form-field> -->
           </div>
     </div>
 </div>
