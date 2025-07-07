@@ -68,6 +68,8 @@ this.selecttab= e
 }
 
  ngOnInit(): void {
+
+  this.getData();
   this.formservices.delSub.subscribe(res => {
     console.log(res,"hello subject")
     this.getData();
