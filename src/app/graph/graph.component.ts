@@ -165,9 +165,7 @@ const addnew =  this.graphForm.get('cnt_name').value
   });
 
   
-  import('highcharts').then(Highcharts => {
 
- 
   this.chart = Highcharts.chart('chartcontainer', {
     chart: {
       type: 'spline',
@@ -249,9 +247,7 @@ this.colorpicker.push(
   this.updateFlag = true;
   this.loader=false;
 
- })
+
 }
-
-
 
 }
